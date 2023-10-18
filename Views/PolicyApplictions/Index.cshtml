@@ -1,0 +1,141 @@
+﻿@model IEnumerable<NextGenLife.Models.PolicyAppliction>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyApplictionIdNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyApplictionCellNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyApplictionAlternativeNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyApplictionAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationPaymentAmount)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CVV)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyApplictionIdNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyApplictionCellNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyApplictionAlternativeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyApplictionAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyMonthlyFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyPlanDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyPayoutAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationPaymentAmount)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CVV)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExpirationDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PolicyApplictionPk }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PolicyApplictionPk }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PolicyApplictionPk })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,176 @@
+﻿@model NextGenLife.Models.PolicyAppliction
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PolicyAppliction</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyApplictionIdNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyApplictionIdNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyApplictionCellNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyApplictionCellNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyApplictionAlternativeNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyApplictionAlternativeNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyApplictionAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyApplictionAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyMonthlyFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPlanDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPayoutAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Application_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Application_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Application_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Application_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationPaymentAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationPaymentAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ClassFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ClassFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CVV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CVV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ExpirationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ExpirationDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

@@ -1,0 +1,200 @@
+﻿@model IEnumerable<NextGenLife.Models.PolicyPlan>
+@{
+    ViewBag.Title = "IndexSenior";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <!-- header -->
+    <!-- //header -->
+    <!-- inner banner -->
+
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title pt-5">Policy</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right"></i>Policy</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+    <!-- courses section -->
+    @*.Where(x => x.Grade == "8")*@
+
+
+
+    <div class="w3l-grids-block-5 py-5">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">Policy</p>
+                <h3 class="title-style">Our Policy List</h3>
+            </div>
+            <div class="row justify-content-center">
+                @foreach (var item in Model)
+                {
+                    <div class="col-lg-4 col-md-6">
+                        <div class="coursecard-single">
+                            <div class="grids5-info position-relative">
+                                <img src="~/assets/images/c1.jpg" alt="" class="img-fluid" />
+                                <div class="meta-list">
+                                    <a href="courses.html">
+                                        @Html.DisplayFor(modelItem => item.Category.Campaign_Name)
+                                        @*@Html.DisplayFor(modelItem => item.Phase)*@
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="content-main-top">
+                                <div class="content-top mb-4 mt-3">
+                                    <ul class="list-unstyled d-flex align-items-center justify-content-between">
+                                        <li>
+                                            <i class="fas fa-book-open"></i>                 @Html.DisplayFor(modelItem => item.PolicyName)
+                                            @*@Html.DisplayFor(modelItem => item.screamclassSUBJECTPC)*@
+                                        </li>
+                                        <li>
+                                            <i class="fas fa-star"></i> @Html.DisplayFor(modelItem => item.PolicyMonthlyFee)
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4>
+                                    <a href="courses.html">
+
+                                        @Html.DisplayFor(modelItem => item.PolicyPayoutAmount)
+                                    </a>
+                                </h4>
+                                <p>
+                                    Cover Description
+                                    <br />
+
+
+
+                                    @Html.DisplayFor(modelItem => item.PolicyPlanDescription)
+
+
+
+
+
+                                </p>
+                                <div class="top-content-border d-flex align-items-center justify-content-between mt-4 pt-4">
+                                    <h6>
+                                        @Html.ActionLink("Edit", "Edit", new { id = item.PolicyPlanPk })
+                                    </h6>
+                                    <a class="btn btn-style-primary" href="courses.html">
+                                        @Html.ActionLink("Delete", "Delete", new { id = item.PolicyPlanPk })
+                                        <i class="fas fa-arrow-right"></i>
+
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+                @*@{
+                        Html.RenderAction("Grade9", "Classes");
+                    }*@
+
+
+            </div>
+            <!-- pagination -->
+            <div class="pagination-style text-center mt-5">
+                <ul>
+                    <li>
+                        <a href="#none" class="not-allowed" disabled="">
+                            <span class="fa fa-angle-double-left" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                    <li><a class="active" href="#page">1</a></li>
+                    <li>
+                        <a href="/Classes/GradePhyisical">2</a>
+                    </li>
+                    <li>
+                        <a href="/Classes/GradeCommerce">3</a>
+                    </li>
+                    <li>
+                        <a href="#page">
+                            <span class="fa fa-angle-double-right" aria-hidden="true"></span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- //pagination -->
+        </div>
+    </div>
+    <!-- //courses section -->
+    <!-- footer block -->
+
+    <script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+    <!-- //move top -->
+    <!-- common jquery plugin -->
+    <script src="~/assets/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+    <!-- theme switch js (light and dark)-->
+    <script src="~/assets/js/theme-change.js"></script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!-- bootstrap -->
+    <script src="~/assets/js/bootstrap.min.js"></script>
+    <!-- //bootstrap -->
+    <!-- //Js scripts -->
+</body>
+
+</html>
+

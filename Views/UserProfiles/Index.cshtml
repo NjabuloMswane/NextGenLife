@@ -1,0 +1,69 @@
+﻿@model IEnumerable<NextGenLife.Models.UserProfile>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileIdNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileCellNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileAlternativeNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.UserProfileAddress)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserProfileIdNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserProfileCellNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserProfileAlternativeNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserProfileAddress)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserProfilePk }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserProfilePk }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserProfilePk })
+        </td>
+    </tr>
+}
+
+</table>

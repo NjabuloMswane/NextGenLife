@@ -1,0 +1,414 @@
+﻿
+@model IEnumerable<NextGenLife.Models.PolicyClaim>
+@{ ViewBag.Title = "Index";
+    var message = TempData["AlertMessage"] ?? string.Empty; }
+<script>
+    var msg = '@message';
+    if (msg)
+        alert(msg);
+</script>
+
+
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                <div class="d-flex px-2 py-1">
+                    <div>
+                        <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                    </div>
+                    <div class="d-flex flex-column justify-content-center">
+                        <h6 class="mb-0 text-sm">@Html.DisplayFor(modelItem => item.PolicyName)</h6>
+                        @*<p class="text-xs text-secondary mb-0">@Html.DisplayFor(modelItem => item.PolicyApplictionEmail)</p>*@
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="text-xs font-weight-bold mb-0">@Html.DisplayFor(modelItem => item.PolicyPlanDescription)</p>
+                @*<p class="text-xs text-secondary mb-0">Organization</p>*@
+            </td>
+            <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.PolicyClaimDate)</span>
+            </td>
+            <td class="align-middle text-center text-sm">
+                <span class="badge badge-sm bg-gradient-success">Pending</span>
+            </td>
+            <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.PolicyMonthlyFee)</span>
+            </td>
+            <td class="align-middle text-center">
+                <span class="text-secondary text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.PolicyPayoutAmount)</span>
+            </td>
+   
+            @*<td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.End_Date)</span>
+                </td>
+                <td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.numberofDays)</span>
+                </td>*@
+            @*<td class="align-middle text-center">
+                    <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                </td>
+                <td class="align-middle">
+                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        Edit
+                    </a>
+                </td>*@
+        </tr>
+
+
+
+
+
+
+
+
+        @*<tr>
+                <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                            <img src="../assets/img/small-logos/logo-atlassian.svg" class="avatar avatar-sm me-3" alt="atlassian">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Add Progress Track</h6>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="avatar-group mt-2">
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                            <img src="../assets/img/team-2.jpg" alt="team5">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                            <img src="../assets/img/team-4.jpg" alt="team6">
+                        </a>
+                    </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> $3,000 </span>
+                </td>
+                <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                            <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">10%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-10" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                            <img src="../assets/img/small-logos/logo-slack.svg" class="avatar avatar-sm me-3" alt="team7">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Fix Platform Errors</h6>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="avatar-group mt-2">
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                            <img src="../assets/img/team-3.jpg" alt="team8">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                            <img src="../assets/img/team-1.jpg" alt="team9">
+                        </a>
+                    </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> Not set </span>
+                </td>
+                <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                            <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">100%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                            <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm me-3" alt="spotify">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Launch our Mobile App</h6>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="avatar-group mt-2">
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                            <img src="../assets/img/team-4.jpg" alt="user1">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Romina Hadid">
+                            <img src="../assets/img/team-3.jpg" alt="user2">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Alexander Smith">
+                            <img src="../assets/img/team-4.jpg" alt="user3">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                            <img src="../assets/img/team-1.jpg" alt="user4">
+                        </a>
+                    </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> $20,500 </span>
+                </td>
+                <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                            <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">100%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-success w-100" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                            <img src="../assets/img/small-logos/logo-jira.svg" class="avatar avatar-sm me-3" alt="jira">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Add the New Pricing Page</h6>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="avatar-group mt-2">
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                            <img src="../assets/img/team-4.jpg" alt="user5">
+                        </a>
+                    </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> $500 </span>
+                </td>
+                <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                            <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">25%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="25"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div class="d-flex px-2 py-1">
+                        <div>
+                            <img src="../assets/img/small-logos/logo-invision.svg" class="avatar avatar-sm me-3" alt="invision">
+                        </div>
+                        <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm">Redesign New Online Shop</h6>
+                        </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="avatar-group mt-2">
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Ryan Tompson">
+                            <img src="../assets/img/team-1.jpg" alt="user6">
+                        </a>
+                        <a href="javascript:;" class="avatar avatar-xs rounded-circle" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Jessica Doe">
+                            <img src="../assets/img/team-4.jpg" alt="user7">
+                        </a>
+                    </div>
+                </td>
+                <td class="align-middle text-center text-sm">
+                    <span class="text-xs font-weight-bold"> $2,000 </span>
+                </td>
+                <td class="align-middle">
+                    <div class="progress-wrapper w-75 mx-auto">
+                        <div class="progress-info">
+                            <div class="progress-percentage">
+                                <span class="text-xs font-weight-bold">40%</span>
+                            </div>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar bg-gradient-info w-40" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="40"></div>
+                        </div>
+                    </div>
+                </td>
+            </tr>*@
+    }
+</tbody>
+
+
+
+
+
+@*<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(function () {
+                event.preventDefault();
+
+                var ListID = $("#number").val();
+                $("#div1").load("/LeaveRequests/Test22", { id: '19' }, function (responseTxt, statusTxt, xhr) {
+                    if (statusTxt == "success")
+                        alert("External content loaded successfully!");
+                    if (statusTxt == "error")
+                        alert("Error: " + xhr.status + ": " + xhr.statusText);
+                });
+            });
+        });
+    </script>*@
+<script>
+                                @*<a href="@Url.Action("Approve", "LeaveRequests",new { id = item.LeaveRequest_ID })" onclick="return confirm('Are you sure you want to Approve, click Ok to Confirm, Or Cancel');" rel="tooltip" title="Approve" class="btn">Approve</a>*@
+
+           function loadAddedVehicles() {
+
+        $.ajax({
+            url: '@Url.Action("Approve", "LeaveRequests")',
+            type: 'GET',
+            success: function (partialView) {
+
+                $("#addedCars").show(500);
+                //myApp.hidePleaseWait();
+                $("#addedVehicles").load(partialView);
+                $("._jsCarMenu").removeClass("d-none");
+            }
+        });
+
+    }
+
+
+
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.8.2.js"></script>
+<style type="text/css">
+    #overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        filter: alpha(opacity=70);
+        -moz-opacity: 0.7;
+        -khtml-opacity: 0.7;
+        opacity: 0.7;
+        z-index: 100;
+        display: none;
+    }
+
+    .cnt223 a {
+        text-decoration: none;
+    }
+
+    .popup {
+        width: 50%;
+        margin: 0 auto;
+        display: none;
+        position: fixed;
+        z-index: 101;
+    }
+
+    .cnt223 {
+        min-width: 600px;
+        width: 600px;
+        min-height: 150px;
+        margin: 100px auto;
+        background: #f3f3f3;
+        position: relative;
+        z-index: 103;
+        padding: 15px 35px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px #000;
+    }
+
+        .cnt223 p {
+            clear: both;
+            color: #555555;
+            /* text-align: justify; */
+            font-size: 20px;
+            font-family: sans-serif;
+        }
+
+            .cnt223 p a {
+                color: #d91900;
+                font-weight: bold;
+            }
+
+        .cnt223 .x {
+            float: right;
+            height: 35px;
+            left: 22px;
+            position: relative;
+            top: -25px;
+            width: 34px;
+        }
+
+            .cnt223 .x:hover {
+                cursor: pointer;
+            }
+</style>
+<script type='text/javascript'>
+    $(function () {
+        var overlay = $('<div id="overlay"></div>');
+        //overlay.show();
+        //overlay.appendTo(document.body);
+
+        $('.p').hide();
+        $('.popupr').hide();
+        $('.close').click(function () {
+            $('.p').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+        $('.takeSD').click(function () {
+            $('.popupr').show();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+        $('.close').click(function () {
+            $('.popupr').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+
+
+        $('.x').click(function () {
+            $('.popup').hide();
+            overlay.appendTo(document.body).remove();
+            return false;
+        });
+    });
+</script>
+
+
+@*<tr>
+            <td><b>Email</b></td>
+            <td>@Model.Email</td>
+
+            <td><b>Number of Adays</b></td>
+            <td>@Model.numberofDays</td>
+
+        </tr>
+    </table>*@
+
+
+
+

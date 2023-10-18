@@ -1,0 +1,58 @@
+﻿@model NextGenLife.Models.PolicyPlan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PolicyPlan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Campaign_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Campaign_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyMonthlyFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPlanDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPayoutAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PolicyPlanPk }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,1331 @@
+﻿@model NextGenLife.Models.ApprovedPolicy
+
+@{
+    ViewBag.Title = "PayWithCard";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+
+}
+
+@*<h2>Payment</h2>*@
+<head>
+    @*<title>Electronics Mart - Ecommerce Category
+        <link href="~/assets/Payment/css/flexslider.css" rel="stylesheet" /> Bootstrap Responsive Web Template | Payment :: w3layouts</title>*@
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Custom-Files -->
+    <link href="~/assets/Payment/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Bootstrap css -->
+    <link href="~/assets/Payment/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Main css -->
+    <link rel="stylesheet" href="~/assets/Payment/css/fontawesome-all.css">
+    <!-- Font-Awesome-Icons-CSS -->
+    <link href="~/assets/Payment/css/popuo-box.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- pop-up-box -->
+    <link href="~/assets/Payment/css/menu.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- menu style -->
+    <!-- //Custom-Files -->
+    <!-- web fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+          rel="stylesheet">
+    <!-- //web fonts -->
+</head>
+
+
+<link href="~/assets/Payment/css/bootstrap.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/creditly.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/easy-responsive-tabs.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/flexslider.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/menu.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/popuo-box.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/style.css" rel="stylesheet" />
+<link href="~/assets/Payment/css/fontawesome-all.css" rel="stylesheet" />
+<!--
+Author: W3layout
+Author URL: http://w3layouts.com
+-->
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    @*<h4>Payment</h4>
+        <hr />*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+   
+    @Html.HiddenFor(model => model.ApprovedPolicyPk)
+    @Html.HiddenFor(model => model.FirstName)
+    @Html.HiddenFor(model => model.ApplicationPaymentAmount)
+    @Html.HiddenFor(model => model.ClassFee)
+    @Html.HiddenFor(model => model.Application_Status)
+    @Html.HiddenFor(model => model.Application_Date)
+    @Html.HiddenFor(model => model.Paylocation)
+    @Html.HiddenFor(model => model.PolicyMonthlyFee)
+    @Html.HiddenFor(model => model.PolicyPayoutAmount)
+    @Html.HiddenFor(model => model.PolicyPlanDescription)
+    @Html.HiddenFor(model => model.PolicyName)
+    @Html.HiddenFor(model => model.LastName)
+    @Html.HiddenFor(model => model.PolicyApplictionIdNumber)
+    @Html.HiddenFor(model => model.gender)
+    @Html.HiddenFor(model => model.PolicyApplictionEmail)
+    @Html.HiddenFor(model => model.PolicyApplictionCellNumber)
+    @Html.HiddenFor(model => model.PolicyApplictionAlternativeNumber)
+    @Html.HiddenFor(model => model.PolicyApplictionAddress)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <body>
+        <script src="https://m.servedby-buysellads.com/monetization.js" type="text/javascript"></script>
+        <script>
+            (function () {
+                if (typeof _bsa !== 'undefined' && _bsa) {
+                    // format, zoneKey, segment:value, options
+                    _bsa.init('flexbar', 'CKYI627U', 'placement:w3layoutscom');
+                }
+            })();
+        </script>
+        <script>
+            (function () {
+                if (typeof _bsa !== 'undefined' && _bsa) {
+                    // format, zoneKey, segment:value, options
+                    _bsa.init('fancybar', 'CKYDL2JN', 'placement:demo');
+                }
+            })();
+        </script>
+        <script>
+            (function () {
+                if (typeof _bsa !== 'undefined' && _bsa) {
+                    // format, zoneKey, segment:value, options
+                    _bsa.init('stickybox', 'CKYI653J', 'placement:w3layoutscom');
+                }
+            })();
+        </script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src='https://www.googletagmanager.com/gtag/js?id=G-98H8KRKT85'></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'G-98H8KRKT85');
+        </script>
+
+        <meta name="robots" content="noindex">
+
+        <link rel="stylesheet" href="../../../../../../assests/css/font-awesome.min.css">
+        <!-- New toolbar-->
+        <style>
+            * {
+                box-sizing: border-box;
+                font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            }
+
+
+            #w3lDemoBar.w3l-demo-bar {
+                top: 0;
+                right: 0;
+                bottom: 0;
+                z-index: 9999;
+                padding: 40px 5px;
+                padding-top: 70px;
+                margin-bottom: 70px;
+                background: #0D1326;
+                border-top-left-radius: 9px;
+                border-bottom-left-radius: 9px;
+            }
+
+                #w3lDemoBar.w3l-demo-bar a {
+                    display: block;
+                    color: #e6ebff;
+                    text-decoration: none;
+                    line-height: 24px;
+                    opacity: .6;
+                    margin-bottom: 20px;
+                    text-align: center;
+                }
+
+                #w3lDemoBar.w3l-demo-bar span.w3l-icon {
+                    display: block;
+                }
+
+                #w3lDemoBar.w3l-demo-bar a:hover {
+                    opacity: 1;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .w3l-icon svg {
+                    color: #e6ebff;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .responsive-icons {
+                    margin-top: 30px;
+                    border-top: 1px solid #41414d;
+                    padding-top: 40px;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .demo-btns {
+                    border-top: 1px solid #41414d;
+                    padding-top: 30px;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .responsive-icons a span.fa {
+                    font-size: 26px;
+                }
+
+                #w3lDemoBar.w3l-demo-bar .no-margin-bottom {
+                    margin-bottom: 0;
+                }
+
+            .toggle-right-sidebar span {
+                background: #0D1326;
+                width: 50px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                color: #e6ebff;
+                border-radius: 50px;
+                font-size: 26px;
+                cursor: pointer;
+                opacity: .5;
+            }
+
+            .pull-right {
+                float: right;
+                position: fixed;
+                right: 0px;
+                top: 70px;
+                width: 90px;
+                z-index: 99999;
+                text-align: center;
+            }
+            /* ============================================================
+                RIGHT SIDEBAR SECTION
+                ============================================================ */
+
+            #right-sidebar {
+                width: 90px;
+                position: fixed;
+                height: 100%;
+                z-index: 1000;
+                right: 0px;
+                top: 0;
+                margin-top: 60px;
+                -webkit-transition: all .5s ease-in-out;
+                -moz-transition: all .5s ease-in-out;
+                -o-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+                overflow-y: auto;
+            }
+
+
+            /* ============================================================
+                RIGHT SIDEBAR TOGGLE SECTION
+                ============================================================ */
+
+            .hide-right-bar-notifications {
+                margin-right: -300px !important;
+                -webkit-transition: all .3s ease-in-out;
+                -moz-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+
+
+
+            media (max-width: 992px) {
+                #w3lDemoBar.w3l-demo-bar a.desktop-mode
+
+            {
+                display: none;
+            }
+
+            }
+
+            media (max-width: 767px) {
+                #w3lDemoBar.w3l-demo-bar a.tablet-mode
+
+            {
+                display: none;
+            }
+
+            }
+
+            media (max-width: 568px) {
+                #w3lDemoBar.w3l-demo-bar a.mobile-mode
+
+            {
+                display: none;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .responsive-icons {
+                margin-top: 0px;
+                border-top: none;
+                padding-top: 0px;
+            }
+
+            #right-sidebar, .pull-right {
+                width: 90px;
+            }
+
+            #w3lDemoBar.w3l-demo-bar .no-margin-bottom-mobile {
+                margin-bottom: 0;
+            }
+            }
+        </style>
+
+
+
+</div>
+
+    <!-- top-header -->
+    <!-- Button trigger modal(select-location) -->
+    <div id="small-dialog1" class="mfp-hide">
+        <div class="select-city">
+            <h3>
+                <i class="fas fa-map-marker"></i> Please Select Your Location
+            </h3>
+            <select class="list_of_cities">
+                <optgroup label="Popular Cities">
+                    <option selected style="display:none;color:#eee;">Select City</option>
+                    <option>Birmingham</option>
+                    <option>Anchorage</option>
+                    <option>Phoenix</option>
+                    <option>Little Rock</option>
+                    <option>Los Angeles</option>
+                    <option>Denver</option>
+                    <option>Bridgeport</option>
+                    <option>Wilmington</option>
+                    <option>Jacksonville</option>
+                    <option>Atlanta</option>
+                    <option>Honolulu</option>
+                    <option>Boise</option>
+                    <option>Chicago</option>
+                    <option>Indianapolis</option>
+                </optgroup>
+                <optgroup label="Alabama">
+                    <option>Birmingham</option>
+                    <option>Montgomery</option>
+                    <option>Mobile</option>
+                    <option>Huntsville</option>
+                    <option>Tuscaloosa</option>
+                </optgroup>
+                <optgroup label="Alaska">
+                    <option>Anchorage</option>
+                    <option>Fairbanks</option>
+                    <option>Juneau</option>
+                    <option>Sitka</option>
+                    <option>Ketchikan</option>
+                </optgroup>
+                <optgroup label="Arizona">
+                    <option>Phoenix</option>
+                    <option>Tucson</option>
+                    <option>Mesa</option>
+                    <option>Chandler</option>
+                    <option>Glendale</option>
+                </optgroup>
+                <optgroup label="Arkansas">
+                    <option>Little Rock</option>
+                    <option>Fort Smith</option>
+                    <option>Fayetteville</option>
+                    <option>Springdale</option>
+                    <option>Jonesboro</option>
+                </optgroup>
+                <optgroup label="California">
+                    <option>Los Angeles</option>
+                    <option>San Diego</option>
+                    <option>San Jose</option>
+                    <option>San Francisco</option>
+                    <option>Fresno</option>
+                </optgroup>
+                <optgroup label="Colorado">
+                    <option>Denver</option>
+                    <option>Colorado</option>
+                    <option>Aurora</option>
+                    <option>Fort Collins</option>
+                    <option>Lakewood</option>
+                </optgroup>
+                <optgroup label="Connecticut">
+                    <option>Bridgeport</option>
+                    <option>New Haven</option>
+                    <option>Hartford</option>
+                    <option>Stamford</option>
+                    <option>Waterbury</option>
+                </optgroup>
+                <optgroup label="Delaware">
+                    <option>Wilmington</option>
+                    <option>Dover</option>
+                    <option>Newark</option>
+                    <option>Bear</option>
+                    <option>Middletown</option>
+                </optgroup>
+                <optgroup label="Florida">
+                    <option>Jacksonville</option>
+                    <option>Miami</option>
+                    <option>Tampa</option>
+                    <option>St. Petersburg</option>
+                    <option>Orlando</option>
+                </optgroup>
+                <optgroup label="Georgia">
+                    <option>Atlanta</option>
+                    <option>Augusta</option>
+                    <option>Columbus</option>
+                    <option>Savannah</option>
+                    <option>Athens</option>
+                </optgroup>
+                <optgroup label="Hawaii">
+                    <option>Honolulu</option>
+                    <option>Pearl City</option>
+                    <option>Hilo</option>
+                    <option>Kailua</option>
+                    <option>Waipahu</option>
+                </optgroup>
+                <optgroup label="Idaho">
+                    <option>Boise</option>
+                    <option>Nampa</option>
+                    <option>Meridian</option>
+                    <option>Idaho Falls</option>
+                    <option>Pocatello</option>
+                </optgroup>
+                <optgroup label="Illinois">
+                    <option>Chicago</option>
+                    <option>Aurora</option>
+                    <option>Rockford</option>
+                    <option>Joliet</option>
+                    <option>Naperville</option>
+                </optgroup>
+                <optgroup label="Indiana">
+                    <option>Indianapolis</option>
+                    <option>Fort Wayne</option>
+                    <option>Evansville</option>
+                    <option>South Bend</option>
+                    <option>Hammond</option>
+                </optgroup>
+                <optgroup label="Iowa">
+                    <option>Des Moines</option>
+                    <option>Cedar Rapids</option>
+                    <option>Davenport</option>
+                    <option>Sioux City</option>
+                    <option>Waterloo</option>
+                </optgroup>
+                <optgroup label="Kansas">
+                    <option>Wichita</option>
+                    <option>Overland Park</option>
+                    <option>Kansas City</option>
+                    <option>Topeka</option>
+                    <option>Olathe </option>
+                </optgroup>
+                <optgroup label="Kentucky">
+                    <option>Louisville</option>
+                    <option>Lexington</option>
+                    <option>Bowling Green</option>
+                    <option>Owensboro</option>
+                    <option>Covington</option>
+                </optgroup>
+                <optgroup label="Louisiana">
+                    <option>New Orleans</option>
+                    <option>Baton Rouge</option>
+                    <option>Shreveport</option>
+                    <option>Metairie</option>
+                    <option>Lafayette</option>
+                </optgroup>
+                <optgroup label="Maine">
+                    <option>Portland</option>
+                    <option>Lewiston</option>
+                    <option>Bangor</option>
+                    <option>South Portland</option>
+                    <option>Auburn</option>
+                </optgroup>
+                <optgroup label="Maryland">
+                    <option>Baltimore</option>
+                    <option>Frederick</option>
+                    <option>Rockville</option>
+                    <option>Gaithersburg</option>
+                    <option>Bowie</option>
+                </optgroup>
+                <optgroup label="Massachusetts">
+                    <option>Boston</option>
+                    <option>Worcester</option>
+                    <option>Springfield</option>
+                    <option>Lowell</option>
+                    <option>Cambridge</option>
+                </optgroup>
+                <optgroup label="Michigan">
+                    <option>Detroit</option>
+                    <option>Grand Rapids</option>
+                    <option>Warren</option>
+                    <option>Sterling Heights</option>
+                    <option>Lansing</option>
+                </optgroup>
+                <optgroup label="Minnesota">
+                    <option>Minneapolis</option>
+                    <option>St. Paul</option>
+                    <option>Rochester</option>
+                    <option>Duluth</option>
+                    <option>Bloomington</option>
+                </optgroup>
+                <optgroup label="Mississippi">
+                    <option>Jackson</option>
+                    <option>Gulfport</option>
+                    <option>Southaven</option>
+                    <option>Hattiesburg</option>
+                    <option>Biloxi</option>
+                </optgroup>
+                <optgroup label="Missouri">
+                    <option>Kansas City</option>
+                    <option>St. Louis</option>
+                    <option>Springfield</option>
+                    <option>Independence</option>
+                    <option>Columbia</option>
+                </optgroup>
+                <optgroup label="Montana">
+                    <option>Billings</option>
+                    <option>Missoula</option>
+                    <option>Great Falls</option>
+                    <option>Bozeman</option>
+                    <option>Butte-Silver Bow</option>
+                </optgroup>
+                <optgroup label="Nebraska">
+                    <option>Omaha</option>
+                    <option>Lincoln</option>
+                    <option>Bellevue</option>
+                    <option>Grand Island</option>
+                    <option>Kearney</option>
+                </optgroup>
+                <optgroup label="Nevada">
+                    <option>Las Vegas</option>
+                    <option>Henderson</option>
+                    <option>North Las Vegas</option>
+                    <option>Reno</option>
+                    <option>Sunrise Manor</option>
+                </optgroup>
+                <optgroup label="New Hampshire">
+                    <option>Manchesters</option>
+                    <option>Nashua</option>
+                    <option>Concord</option>
+                    <option>Dover</option>
+                    <option>Rochester</option>
+                </optgroup>
+                <optgroup label="New Jersey">
+                    <option>Newark</option>
+                    <option>Jersey City</option>
+                    <option>Paterson</option>
+                    <option>Elizabeth</option>
+                    <option>Edison</option>
+                </optgroup>
+                <optgroup label="New Mexico">
+                    <option>Albuquerque</option>
+                    <option>Las Cruces</option>
+                    <option>Rio Rancho</option>
+                    <option>Santa Fe</option>
+                    <option>Roswell</option>
+                </optgroup>
+                <optgroup label="New York">
+                    <option>New York</option>
+                    <option>Buffalo</option>
+                    <option>Rochester</option>
+                    <option>Yonkers</option>
+                    <option>Syracuse</option>
+                </optgroup>
+                <optgroup label="North Carolina">
+                    <option>Charlotte</option>
+                    <option>Raleigh</option>
+                    <option>Greensboro</option>
+                    <option>Winston-Salem</option>
+                    <option>Durham</option>
+                </optgroup>
+                <optgroup label="North Dakota">
+                    <option>Fargo</option>
+                    <option>Bismarck</option>
+                    <option>Grand Forks</option>
+                    <option>Minot</option>
+                    <option>West Fargo</option>
+                </optgroup>
+                <optgroup label="Ohio">
+                    <option>Columbus</option>
+                    <option>Cleveland</option>
+                    <option>Cincinnati</option>
+                    <option>Toledo</option>
+                    <option>Akron</option>
+                </optgroup>
+                <optgroup label="Oklahoma">
+                    <option>Oklahoma City</option>
+                    <option>Tulsa</option>
+                    <option>Norman</option>
+                    <option>Broken Arrow</option>
+                    <option>Lawton</option>
+                </optgroup>
+                <optgroup label="Oregon">
+                    <option>Portland</option>
+                    <option>Eugene</option>
+                    <option>Salem</option>
+                    <option>Gresham</option>
+                    <option>Hillsboro</option>
+                </optgroup>
+                <optgroup label="Pennsylvania">
+                    <option>Philadelphia</option>
+                    <option>Pittsburgh</option>
+                    <option>Allentown</option>
+                    <option>Erie</option>
+                    <option>Reading</option>
+                </optgroup>
+                <optgroup label="Rhode Island">
+                    <option>Providence</option>
+                    <option>Warwick</option>
+                    <option>Cranston</option>
+                    <option>Pawtucket</option>
+                    <option>East Providence</option>
+                </optgroup>
+                <optgroup label="South Carolina">
+                    <option>Columbia</option>
+                    <option>Charleston</option>
+                    <option>North Charleston</option>
+                    <option>Mount Pleasant</option>
+                    <option>Rock Hill</option>
+                </optgroup>
+                <optgroup label="South Dakota">
+                    <option>Sioux Falls</option>
+                    <option>Rapid City</option>
+                    <option>Aberdeen</option>
+                    <option>Brookings</option>
+                    <option>Watertown</option>
+                </optgroup>
+                <optgroup label="Tennessee">
+                    <option>Memphis</option>
+                    <option>Nashville</option>
+                    <option>Knoxville</option>
+                    <option>Chattanooga</option>
+                    <option>Clarksville</option>
+                </optgroup>
+                <optgroup label="Texas">
+                    <option>Houston</option>
+                    <option>San Antonio</option>
+                    <option>Dallas</option>
+                    <option>Austin</option>
+                    <option>Fort Worth</option>
+                </optgroup>
+                <optgroup label="Utah">
+                    <option>Salt Lake City</option>
+                    <option>West Valley City</option>
+                    <option>Provo</option>
+                    <option>West Jordan</option>
+                    <option>Orem</option>
+                </optgroup>
+                <optgroup label="Vermont">
+                    <option>Burlington</option>
+                    <option>Essex</option>
+                    <option>South Burlington</option>
+                    <option>Colchester</option>
+                    <option>Rutland</option>
+                </optgroup>
+                <optgroup label="Virginia">
+                    <option>Virginia Beach</option>
+                    <option>Norfolk</option>
+                    <option>Chesapeake</option>
+                    <option>Arlington</option>
+                    <option>Richmond</option>
+                </optgroup>
+                <optgroup label="Washington">
+                    <option>Seattle</option>
+                    <option>Spokane</option>
+                    <option>Tacoma</option>
+                    <option>Vancouver</option>
+                    <option>Bellevue</option>
+                </optgroup>
+                <optgroup label="West Virginia">
+                    <option>Charleston</option>
+                    <option>Huntington</option>
+                    <option>Parkersburg</option>
+                    <option>Morgantown</option>
+                    <option>Wheeling</option>
+                </optgroup>
+                <optgroup label="Wisconsin">
+                    <option>Milwaukee</option>
+                    <option>Madison</option>
+                    <option>Green Bay</option>
+                    <option>Kenosha</option>
+                    <option>Racine</option>
+                </optgroup>
+                <optgroup label="Wyoming">
+                    <option>Cheyenne</option>
+                    <option>Casper</option>
+                    <option>Laramie</option>
+                    <option>Gillette</option>
+                    <option>Rock Springs</option>
+                </optgroup>
+            </select>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <!-- //shop locator (popup) -->
+    <!-- modals -->
+    <!-- log in -->
+    <!-- //modal -->
+    <!-- //top-header -->
+    <!-- header-bottom-->
+    <!-- shop locator (popup) -->
+    <!-- //header-bottom -->
+    <!-- navigation -->
+    <!-- //navigation -->
+    <!-- banner-2 -->
+    <div class="page-head_agile_info_w3l inner-contact-page">
+        <div class="container py-5">
+            <h3 class="title-style text-white pt-5"><span>Payment</span> Page</h3>
+            <ul class="w3_short pt-3 pb-5">
+                <li>
+                    <a href="index.html" class="text-white">Home</a>
+                    <i class="fa fa-angle-right mx-2 text-white" aria-hidden="true"></i>
+                </li>
+                <li class="text-light">Payment Page</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //banner-2 -->
+    <!-- page -->
+    <div class="services-breadcrumb">
+        <div class="agile_inner_breadcrumb">
+
+        </div>
+    </div>
+    <!-- //page -->
+
+
+    <!---728x90--->
+    </div>
+    <!-- payment page-->
+    <div class="privacy py-sm-5 py-5">
+        <div class="container py-md-5 py-4">
+            <!-- tittle heading -->
+            <h3 class="tittle-w3l text-center mb-lg-5 mb-sm-4 mb-3">Payment</h3>
+            <!-- //tittle heading -->
+            <div class="checkout-right">
+                <!--Horizontal Tab-->
+                <div id="parentHorizontalTab">
+                    <ul class="resp-tabs-list hor_1">
+                        <li>Credit/Debit</li>
+                        <li>Net Banking</li>
+                        <li>Paypal Account</li>
+                    </ul>
+                    <div class="resp-tabs-container hor_1">
+
+
+                        <div>
+                            <form action="payment.html#" method="post" class="creditly-card-form agileinfo_form">
+                                <div class="creditly-wrapper wthree, w3_agileits_wrapper">
+                                    <div class="credit-card-wrapper">
+                                        <div class="first-row form-group">
+                                            <div class="controls">
+                                                <label class="control-label">Card Holders Name</label>
+                                                @Html.EditorFor(model => model.CardName, new { htmlAttributes = new { @class = "form-control", @placeholder = "John Smith" } })
+                                                @Html.ValidationMessageFor(model => model.CardName, "", new { @class = "text-danger" })
+                                                @*<input class="billing-address-name form-control" type="text" name="name"
+                placeholder="John Smith">*@
+                                            </div>
+                                            <div class="w3_agileits_card_number_grids my-3">
+                                                <div class="w3_agileits_card_number_grid_left">
+                                                    <div class="controls">
+                                                        <label class="control-label">Card Number</label>
+                                                        @Html.EditorFor(model => model.CardNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "**** **** **** ****" } })
+                                                        @Html.ValidationMessageFor(model => model.CardNumber, "", new { @class = "text-danger" })
+                                                        @*<input class="number credit-card-number form-control"
+        type="text" name="number" inputmode="numeric"
+        autocomplete="cc-number" autocompletetype="cc-number"
+        x-autocompletetype="cc-number"
+        placeholder="&#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149; &#149;&#149;&#149;&#149;">*@
+                                                    </div>
+                                                </div>
+
+                                                <div class="w3_agileits_card_number_grid_right mt-2">
+                                                    <div class="controls">
+                                                        <label class="control-label">CVV</label>
+                                                        @Html.EditorFor(model => model.CVV, new { htmlAttributes = new { @class = "form-control", @placeholder = "***" } })
+                                                        @Html.ValidationMessageFor(model => model.CVV, "", new { @class = "text-danger" })
+                                                        @*<input class="security-code form-control" Â· inputmode="numeric"
+        type="text" name="security-code"
+        placeholder="&#149;&#149;&#149;">*@
+                                                    </div>
+                                                </div>
+                                                <div class="clear"> </div>
+                                            </div>
+                                            <div class="controls">
+                                                <label class="control-label">Expiration Date</label>
+                                                @Html.EditorFor(model => model.ExpirationDate, new { htmlAttributes = new { @class = "form-control", @placeholder = "MM / YY" } })
+                                                @Html.ValidationMessageFor(model => model.ExpirationDate, "", new { @class = "text-danger" })
+                                                @*<input class="expiration-month-and-year form-control" type="text"
+        name="expiration-month-and-year" placeholder="MM / YY">*@
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </form>
+                            <form action="https://sandbox.payfast.co.za/eng/process?" method="post">
+                                <input type="hidden" name="merchant_id" value="10027774">
+                                <input type="hidden" name="merchant_key" value="v6xk9uu4f4u3b">
+                                <input type="hidden" name="amount" @Html.HiddenFor(model => model.PolicyMonthlyFee)
+                                <input type="hidden" name="item_name" value="Test Product">
+                                <input type="hidden" name="return_url" value="https://localhost:44327/UserProfiles/Profile">
+                                <input type="hidden" name="item_name" value="Test Product">
+                                <input type="hidden" name="cancel_url" value="https://www.example.com/cancel">
+                                <input type="hidden" name="notify_url" value="https://www.example.com/notify">
+                                <button  type="submit" id="nextZero" class="submit mt-3"><span>Make a Payment</span></button>
+
+                                @*<input type="submit" id="nextZero">
+                                <input type="button" class="next action-button" id="nextZero" />*@
+
+
+                            </form>
+                            @*<add key="MerchantId" value="10027774" />
+                                <add key="MerchantKey" value="v6xk9uu4f4u3b" />
+                                <add key="signature" value="0d7bbb5a2c9c8b9ae1f53d48ff9a11a8" />
+
+                                <add key="ProcessUrl" value="https://sandbox.payfast.co.za/eng/process?" />
+                                <add key="ValidateUrl" value="https://sandbox.payfast.co.za/eng/query/validate" />
+                                <add key="ReturnUrl" value="https://localhost:44378/" />
+                                <add key="CancelUrl" value="https://localhost:44378/" />
+                                <add key="NotifyUrl" value="https://localhost:44378/" />*@
+                        </div>
+                        <div>
+                            <div class="vertical_post">
+                                <form action="payment.html#" method="post">
+                                    <h5>Select From Popular Banks</h5>
+                                    <div class="swit-radio">
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio" checked="">
+                                                    <i></i>Syndicate Bank
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio">
+                                                    <i></i>Bank of Baroda
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio">
+                                                    <i></i>Canara Bank
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio">
+                                                    <i></i>ICICI Bank
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio">
+                                                    <i></i>State Bank Of India
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="check_box_one">
+                                            <div class="radio_one">
+                                                <label>
+                                                    <input type="radio" name="radio">
+                                                    <i></i>Another
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <h5>Or Select Other Bank</h5>
+                                    <div class="section_room_pay">
+                                        <select class="year">
+                                            <option value="">=== Other Banks ===</option>
+                                            <option value="ALB-NA">Allahabad Bank NetBanking</option>
+                                            <option value="ADB-NA">Andhra Bank</option>
+                                            <option value="BBK-NA">Bank of Bahrain and Kuwait NetBanking</option>
+                                            <option value="BBC-NA">Bank of Baroda Corporate NetBanking</option>
+                                            <option value="BBR-NA">Bank of Baroda Retail NetBanking</option>
+                                            <option value="BOI-NA">Bank of India NetBanking</option>
+                                            <option value="BOM-NA">Bank of Maharashtra NetBanking</option>
+                                            <option value="CSB-NA">Catholic Syrian Bank NetBanking</option>
+                                            <option value="CBI-NA">Central Bank of India</option>
+                                            <option value="CUB-NA">City Union Bank NetBanking</option>
+                                            <option value="CRP-NA">Corporation Bank</option>
+                                            <option value="DBK-NA">Deutsche Bank NetBanking</option>
+                                            <option value="DCB-NA">Development Credit Bank</option>
+                                            <option value="DC2-NA">Development Credit Bank - Corporate</option>
+                                            <option value="DLB-NA">Dhanlaxmi Bank NetBanking</option>
+                                            <option value="FBK-NA">Federal Bank NetBanking</option>
+                                            <option value="IDS-NA">Indusind Bank NetBanking</option>
+                                            <option value="IOB-NA">Indian Overseas Bank</option>
+                                            <option value="ING-NA">ING Vysya Bank (now Kotak)</option>
+                                            <option value="JKB-NA">Jammu and Kashmir NetBanking</option>
+                                            <option value="JSB-NA">Janata Sahakari Bank Limited</option>
+                                            <option value="KBL-NA">Karnataka Bank NetBanking</option>
+                                            <option value="KVB-NA">Karur Vysya Bank NetBanking</option>
+                                            <option value="LVR-NA">Lakshmi Vilas Bank NetBanking</option>
+                                            <option value="OBC-NA">Oriental Bank of Commerce NetBanking</option>
+                                            <option value="CPN-NA">PNB Corporate NetBanking</option>
+                                            <option value="PNB-NA">PNB NetBanking</option>
+                                            <option value="RSD-DIRECT">
+                                                Rajasthan State Co-operative Bank-Debit Card
+                                            </option>
+                                            <option value="RBS-NA">RBS (The Royal Bank of Scotland)</option>
+                                            <option value="SWB-NA">Saraswat Bank NetBanking</option>
+                                            <option value="SBJ-NA">SB Bikaner and Jaipur NetBanking</option>
+                                            <option value="SBH-NA">SB Hyderabad NetBanking</option>
+                                            <option value="SBM-NA">SB Mysore NetBanking</option>
+                                            <option value="SBT-NA">SB Travancore NetBanking</option>
+                                            <option value="SVC-NA">Shamrao Vitthal Co-operative Bank</option>
+                                            <option value="SIB-NA">South Indian Bank NetBanking</option>
+                                            <option value="SBP-NA">State Bank of Patiala NetBanking</option>
+                                            <option value="SYD-NA">Syndicate Bank NetBanking</option>
+                                            <option value="TNC-NA">
+                                                Tamil Nadu State Co-operative Bank NetBanking
+                                            </option>
+                                            <option value="UCO-NA">UCO Bank NetBanking</option>
+                                            <option value="UBI-NA">Union Bank NetBanking</option>
+                                            <option value="UNI-NA">United Bank of India NetBanking</option>
+                                            <option value="VJB-NA">Vijaya Bank NetBanking</option>
+                                        </select>
+                                    </div>
+                                    <button type="submit" class="btn btn-style mt-4">Pay Now</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div>
+                            <div id="tab4" class="tab-grid" style="display: block;">
+                                <div class="row">
+                                    <div class="col-md-6 pay-forms">
+                                        <img class="pp-img" src="~/assets/Payment/images/paypal.png" alt="Image Alternative text"
+                                             title="Image Title">
+                                        <p>
+                                            Important: You will be redirected to PayPal's website to securely complete
+                                            your payment.
+                                        </p>
+                                        <a class="btn btn-primary">Checkout via Paypal</a>
+                                    </div>
+                                    <div class="col-md-6 number-paymk">
+                                        <form action="payment.html#" method="post"
+                                              class="creditly-card-form-2 shopf-sear-headinfo_form">
+                                            <section class="creditly-wrapper payf_wrapper">
+                                                <div class="credit-card-wrapper">
+                                                    <div class="first-row form-group">
+                                                        <div class="controls">
+                                                            <label class="control-label">Card Holder </label>
+                                                            <input class="billing-address-name form-control" type="text"
+                                                                   name="name" placeholder="John Smith">
+                                                        </div>
+                                                        <div class="paymntf_card_number_grids">
+                                                            <div class="fpay_card_number_grid_left">
+                                                                <div class="controls mt-3">
+                                                                    <label class="control-label">Card Number</label>
+                                                                    <input class="number credit-card-number-2 form-control"
+                                                                           type="text" name="number" inputmode="numeric"
+                                                                           autocomplete="cc-number"
+                                                                           autocompletetype="cc-number"
+                                                                           x-autocompletetype="cc-number"
+                                                                           placeholder="•••• •••• •••• ••••">
+                                                                </div>
+                                                            </div>
+                                                            <div class="fpay_card_number_grid_right mt-3">
+                                                                <div class="controls">
+                                                                    <label class="control-label">CVV</label>
+                                                                    <input class="security-code-2 form-control" Â·=""
+                                                                           inputmode="numeric" type="text"
+                                                                           name="security-code" placeholder="•••">
+                                                                </div>
+                                                            </div>
+                                                            <div class="clear"> </div>
+                                                        </div>
+                                                        <div class="controls mt-3">
+                                                            <label class="control-label">Valid Thru</label>
+                                                            <input class="expiration-month-and-year-2 form-control"
+                                                                   type="text" name="expiration-month-and-year"
+                                                                   placeholder="MM / YY">
+                                                        </div>
+                                                    </div>
+                                                    <input type="submit" value="Save" class="btn btn-default" />
+                                                    <input class="submit" type="submit" value="Proceed Payment">
+                                                </div>
+                                            </section>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Plug-in Initialisation-->
+            </div>
+        </div>
+    </div>
+    <!-- //payment page -->
+    <!-- middle section -->
+
+    <!-- footer -->
+    <!-- payment -->
+    <div class="sub-some child-momu mt-4">
+        <h5 class="font-weight-bold mb-3">Payment Method</h5>
+        <ul>
+            <li>
+                <img src="~/assets/Payment/images/pay2.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay5.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay1.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay4.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay6.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay3.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay7.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/''images/pay8.png" alt="">
+            </li>
+            <li>
+                <img src="~/assets/Payment/images/pay9.png" alt="">
+            </li>
+        </ul>
+    </div>
+    <!-- //payment -->
+    @*</div>
+        </div>*@
+    <!-- //footer fourth section (text) -->
+    @*</footer>*@
+    <!-- //footer -->
+    <!-- copyright -->
+    <!-- //copyright -->
+    <!-- js-files -->
+    <!-- common jquery plugin -->
+    <script src="~/assets/Payment/js/jquery-3.3.1.min.js"></script>
+    <!-- //common jquery plugin -->
+    <!-- here stars scrolling icon -->
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            /*
+                var defaults = {
+                containerID: 'toTop', // fading element id
+                containerHoverID: 'toTopHover', // fading element hover id
+                scrollSpeed: 1200,
+                easingType: 'linear'
+                };
+            */
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!-- //here ends scrolling icon -->
+    <!-- js -->
+    <script src="~/assets/Payment/js/jquery-1.11.1.min.js"></script>
+    <!-- //js -->
+    <!-- start-smoth-scrolling -->
+    <script type="text/javascript" src="~/assets/Payment/js/move-top.js"></script>
+    <script type="text/javascript" src="~/assets/Payment/js/easing.js"></script>
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 1000);
+            });
+        });
+    </script>
+    <!-- start-smoth-scrolling -->
+    <!-- nav smooth scroll -->
+    <script>
+        $(document).ready(function () {
+            $(".dropdown").hover(
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideDown("fast");
+                    $(this).toggleClass('open');
+                },
+                function () {
+                    $('.dropdown-menu', this).stop(true, true).slideUp("fast");
+                    $(this).toggleClass('open');
+                }
+            );
+        });
+    </script>
+    <!-- //nav smooth scroll -->
+    <!-- popup modal (for location)-->
+    <script src="~/assets/Payment/js/jquery.magnific-popup.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false,
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+            });
+
+        });
+    </script>
+    <!-- //popup modal (for location)-->
+    <!-- easy-responsive-tabs -->
+    <link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css" />
+    <script src="~/assets/Payment/js/easyResponsiveTabs.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //Horizontal Tab
+            $('#parentHorizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true, // 100% fit in a container
+                tabidentify: 'hor_1', // The tab groups identifier
+                activate: function (event) { // Callback function if tab is switched
+                    var $tab = $(this);
+                    var $info = $('#nested-tabInfo');
+                    var $name = $('span', $info);
+                    $name.text($tab.text());
+                    $info.show();
+                }
+            });
+        });
+    </script>
+    <!-- //easy-responsive-tabs -->
+    <!-- credit-card -->
+    <script src="~/assets/Payment/js/creditly.js"></script>
+    <link rel="stylesheet" href="css/creditly.css" type="text/css" media="all" />
+    <script>
+        $(function () {
+            var creditly = Creditly.initialize(
+                '.creditly-wrapper .expiration-month-and-year',
+                '.creditly-wrapper .credit-card-number',
+                '.creditly-wrapper .security-code',
+                '.creditly-wrapper .card-type');
+
+
+            $(".creditly-card-form .submit").click(function (e) {
+                e.preventDefault();
+                var output = creditly.validate();
+                if (output) {
+                    // Your validated credit card output
+                    console.log(output);
+                }
+            });
+        });
+    </script>
+
+    <!-- creditly2 (for paypal) -->
+    <script src="~/assets/Payment/js/creditly2.js"></script>
+    <script>
+        $(function () {
+            var creditly = Creditly2.initialize(
+                '.creditly-wrapper .expiration-month-and-year-2',
+                '.creditly-wrapper .credit-card-number-2',
+                '.creditly-wrapper .security-code-2',
+                '.creditly-wrapper .card-type');
+
+            $(".creditly-card-form-2 .submit").click(function (e) {
+                e.preventDefault();
+                var output = creditly.validate();
+                if (output) {
+                    // Your validated credit card output
+                    console.log(output);
+                }
+            });
+        });
+    </script>
+    <!-- //credit-card -->
+    <!-- cart-js -->
+    <script src="~/assets/Payment/js/minicart.js"></script>
+    <script>
+        paypals.minicarts
+            .render(); //use only unique class names other than paypals.minicarts.Also Replace same class name in css and minicart.min.js
+
+        paypals.minicarts.cart.on('checkout', function (evt) {
+            var items = this.items(),
+                len = items.length,
+                total = 0,
+                i;
+
+            // Count the number of each item in the cart
+            for (i = 0; i < len; i++) {
+                total += items[i].get('quantity');
+            }
+
+            if (total < 3) {
+                alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+                evt.preventDefault();
+            }
+        });
+    </script>
+    <!-- //cart-js -->
+    <!-- password-script -->
+    <script>
+        window.onload = function () {
+            document.getElementById("password1").onchange = validatePassword;
+            document.getElementById("password2").onchange = validatePassword;
+        }
+
+        function validatePassword() {
+            var pass2 = document.getElementById("password2").value;
+            var pass1 = document.getElementById("password1").value;
+            if (pass1 != pass2)
+                document.getElementById("password2").setCustomValidity("Passwords Don't Match");
+            else
+                document.getElementById("password2").setCustomValidity('');
+            //empty string means no validation error
+        }
+    </script>
+    <!-- //password-script -->
+    <!-- theme switch js (light and dark)-->
+    <script src="~/assets/Payment/js/theme-change.js"></script>
+    <script>
+        function autoType(elementClass, typingSpeed) {
+            var thhis = $(elementClass);
+            thhis.css({
+                "position": "relative",
+                "display": "inline-block"
+            });
+            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+            thhis = thhis.find(".text-js");
+            var text = thhis.text().trim().split('');
+            var amntOfChars = text.length;
+            var newString = "";
+            thhis.text("|");
+            setTimeout(function () {
+                thhis.css("opacity", 1);
+                thhis.prev().removeAttr("style");
+                thhis.text("");
+                for (var i = 0; i < amntOfChars; i++) {
+                    (function (i, char) {
+                        setTimeout(function () {
+                            newString += char;
+                            thhis.text(newString);
+                        }, i * typingSpeed);
+                    })(i + 1, text[i]);
+                }
+            }, 1500);
+        }
+
+        $(document).ready(function () {
+            // Now to start autoTyping just call the autoType function with the
+            // class of outer div
+            // The second paramter is the speed between each letter is typed.
+            autoType(".type-js", 200);
+        });
+    </script>
+    <!-- //theme switch js (light and dark)-->
+    <!-- disable body scroll which navbar is in active -->
+    <script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+    <!-- //disable body scroll which navbar is in active -->
+    <!--bootstrap-->
+    <script src="~/assets/Payment/js/bootstrap.min.js"></script>
+    <!-- //bootstrap-->
+    <!-- //Js scripts -->
+
+
+
+
+    @*<div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>*@
+
+
+<script>
+
+
+        $(document).ready(function () {
+            $("#nextZero").click(function () {
+                sd = $("#ApprovedPolicyPk").val(),
+                    dd = "/ApprovedPolicies/PayWithCard1",
+                    console.log("ddd",dd),
+
+                console.log("asa"+dd+sd),
+                $.ajax(
+                    {
+                        type: "POST", //HTTP POST Method
+                        url: "" + dd, // Controller/View
+
+                        data: { //Passing data
+                            ApprovedPolicyPk: $("#ApprovedPolicyPk").val(), //Reading text box values using Jquery
+                            merchant_key: "v6xk9uu4f4u3b",
+                            ApprovedPolicyPk: $("#ApprovedPolicyPk").val(),
+                            FirstName: $("#FirstName").val(),
+                            ApplicationPaymentAmount: $("#ApplicationPaymentAmount").val(),
+                            ClassFee: $("#ClassFee").val(),
+                            Application_Status: $("#Application_Status").val(),
+                            Application_Date: $("#Application_Date").val(),
+                            Paylocation: $("#Paylocation").val(),
+                            PolicyMonthlyFee: $("#PolicyMonthlyFee").val(),
+                            PolicyPayoutAmount: $("#PolicyPayoutAmount").val(),
+                            PolicyPlanDescription: $("#PolicyPlanDescription").val(),
+                            PolicyName: $("#PolicyName").val(),
+                            LastName: $("#LastName").val(),
+                            PolicyApplictionIdNumber: $("#PolicyApplictionIdNumber").val(),
+                            gender: $("#gender").val(),
+                            PolicyApplictionEmail: $("#PolicyApplictionEmail").val(),
+                            PolicyApplictionCellNumber: $("#PolicyApplictionCellNumber").val(),
+                            PolicyApplictionAlternativeNumber: $("#PolicyApplictionAlternativeNumber").val(),
+                            PolicyApplictionAddress: $("#PolicyApplictionAddress").val(),
+                            CardName: $("#CardName").val(),
+                            CardNumber: $("#CardNumber").val(),
+                            CardNumber: $("#CVV").val(),
+                            ExpirationDate: $("#ExpirationDate").val(),
+
+                        }
+
+                    });
+
+            });
+        });
+</script>
+
+}
+
+
+
+
+
+
+
+
+
+
+
+

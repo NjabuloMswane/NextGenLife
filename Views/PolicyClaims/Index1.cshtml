@@ -1,0 +1,75 @@
+﻿@model IEnumerable<NextGenLife.Models.PolicyClaim>
+
+@{
+    ViewBag.Title = "Index1";
+}
+
+<h2>Index1</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyUserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyReason)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyStatus)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyClaimDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyUserName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyReason)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyStatus)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyClaimDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyMonthlyFee)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyPlanDescription)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PolicyPayoutAmount)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PolicyClaimPK }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PolicyClaimPK }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PolicyClaimPK })
+        </td>
+    </tr>
+}
+
+</table>

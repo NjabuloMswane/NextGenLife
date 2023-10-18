@@ -1,0 +1,119 @@
+﻿@model IEnumerable<NextGenLife.Models.ApprovedPolicy>
+@{ ViewBag.Title = "Index";
+    var message = TempData["AlertMessage"] ?? string.Empty; }
+<script>
+            var msg = '@message';
+            if (msg)
+                alert(msg);
+</script>
+
+@*<thead>
+        <tr class="table-header-row">
+            <th>
+                @Html.DisplayNameFor(model => model.Campaign.Campaign_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Department.Department_Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Actioned_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.requestComment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Start_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.End_Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numberofDays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+        </tr>
+    </thead>*@
+<tbody>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                <div class="d-flex px-2">
+                    <div>
+                        <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm rounded-circle me-2" alt="spotify">
+                    </div>
+                    <div class="my-auto">
+                        <h6 class="mb-0 text-sm">@Html.DisplayFor(modelItem => item.PolicyName)</h6>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <p class="text-sm font-weight-bold mb-0">@Html.DisplayFor(modelItem => item.PolicyApplictionEmail)</p>
+            </td>
+            <td>
+                <span class="text-xs font-weight-bold">@Html.DisplayFor(modelItem => item.Application_Status)</span>
+            </td>
+            <td class="align-middle text-center">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="me-2 text-xs font-weight-bold"> @Html.DisplayFor(modelItem => item.PolicyPayoutAmount)</span>
+
+                </div>
+            </td>
+
+        </tr>
+
+
+        @*<tr>
+                <td width="60px">
+                    <div class="imgBx"><img src="~/imgs/customer02.jpg" alt=""></div>
+                </td>
+                <td>
+                    <h4>sdlamaka@aspiremoney.co.uk<br> <span>Approved</span></h4>
+                </td>
+            </tr>*@
+        @*<tr>
+                            <td width="60px">
+                                <div class="imgBx"><img src="~/imgs/customer01.jpg" alt=""></div>
+                            </td>
+                            <td>
+                                <h4>sdlamaka@aspiremoney.co.uk<br> <span>Approved</span></h4>
+                            </td>
+                        </tr>
+
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Campaign.Campaign_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Department_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Actioned_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.requestComment)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Start_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.End_Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numberofDays)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>*@
+        <!--</tr>-->
+    }
+
+</tbody>

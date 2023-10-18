@@ -1,0 +1,613 @@
+﻿@model NextGenLife.Models.PolicyPlan
+
+@{
+    ViewBag.Title = "PolicyAppliction";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+ 
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.PolicyPlanPk)
+    @Html.HiddenFor(model => model.PolicyName)
+    @Html.HiddenFor(model => model.PolicyMonthlyFee)
+    @Html.HiddenFor(model => model.PolicyPlanDescription)
+    @Html.HiddenFor(model => model.PolicyPayoutAmount)
+    @Html.HiddenFor(model => model.Campaign_ID)
+    <!-- inner banner -->
+    <section class="inner-banner py-5">
+        <div class="w3l-breadcrumb py-lg-5">
+            <div class="container pt-4 pb-sm-4">
+                <h4 class="inner-text-title pt-5">Application</h4>
+                <ul class="breadcrumbs-custom-path">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><i class="fas fa-angle-right"></i>Application</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- //inner banner -->
+
+    <section class="w3l-contact py-5" id="contact">
+        <div class="container py-md-5 py-4">
+            <div class="title-main text-center mx-auto mb-md-5 mb-4" style="max-width:500px;">
+                <p class="text-uppercase">PolicyAppliction</p>
+                <h3 class="title-style">Application</h3>
+            </div>
+            <div class="row contact-block">
+                <div contact-right">
+                    <form action="https://sendmail.w3layouts.com/submitForm" method="post" class="signin-form">
+                        <div>
+                            @*<h1>Create a Multi-Step Form Using HTML, CSS, and JavaScript</h1>*@
+                            <div id="multi-step-form-container">
+                                <!-- Form Steps / Progress Bar -->
+                                <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0">
+                                    <!-- Step 1 -->
+                                    <li class="form-stepper-active text-center form-stepper-list" step="1">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle">
+                                                <span>1</span>
+                                            </span>
+                                            <div class="label">Policy Information</div>
+                                        </a>
+                                    </li>
+                                    <!-- Step 2 -->
+                                    <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle text-muted">
+                                                <span>2</span>
+                                            </span>
+                                            <div class="label text-muted">Beneficiary Information</div>
+                                        </a>
+                                    </li>
+                                    <!-- Step 3 -->
+                                    <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                                        <a class="mx-2">
+                                            <span class="form-stepper-circle text-muted">
+                                                <span>3</span>
+                                            </span>
+                                            <div class="label text-muted">Upload Supporting Document</div>
+                                        </a>
+                                    </li>
+                                </ul>
+                                <!-- Step Wise Form Content -->
+                                <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+                                    <!-- Step 1 Content -->
+                                    <section id="step-1" class="form-step">
+                                        <h2 class="font-normal">
+                                            Easy-to-use self-service features
+                                        </h2>
+                                        <!-- Step 1 input fields -->
+                                        <div class="mt-3">
+                                            <div class="input-grids">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        @*@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter First Name" } })*@
+                                                        Username and password NEW
+                                                        Change your profile username and password or activate fingerprint recognition on the app.
+
+
+                                                        Bank details
+                                                        View and update your banking details linked to your policies.
+
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        Policy documentation
+                                                        Request your policy documents and confirmation of cover.
+
+
+                                                        Access your policy
+                                                        View your policy details, OUTbonus amount and payment date.
+
+
+                                                        @*@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Last Name" } })*@
+
+                                                        @*<input type="email" name="w3lSender" id="w3lSender" placeholder="Enter Last Name"
+                                                            class="contact-input" required="" />*@
+                                                    </div>
+                                                </div>
+                                                @*@Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Phone Number" } })*@
+
+                                                SmartDrive
+                                                View your SmartDrive scores and see how well you're driving.
+                                                @*<input type="text" name="w3lSubect" id="w3lSubect" placeholder="Phone Number"
+                                                    class="contact-input" required="" />*@
+                                                @*@Html.EditorFor(model => model.EmailAddress, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Email Address" } })*@
+
+                                                @*<input type="text" name="w3lWebsite" id="w3lWebsite" placeholder="Email Address"
+                                                    class="contact-input" required="" />*@
+                                            </div>
+
+                                            <div class="form-input">
+                                                @*@Html.EditorFor(model => model.IDNumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Your Indentity Number" } })*@
+
+                                                @*<input type="text" name="w3lWebsite" id="w3lWebsite" placeholder="Indentity Number"
+                                                    class="contact-input" required="" />*@
+                                                <div class="mt-3">
+                                                    <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        @*<div class="mt-3">
+                                                <button class="button btn-navigate-form-step" type="button" step_number="2">Next</button>
+                                            </div>*@
+                                    </section>
+                                    <!-- Step 2 Content, default hidden on page load. -->
+                                    <section id="step-2" class="form-step d-none">
+                                        <h2 class="font-normal">Beneficiary Information</h2>
+                                        <!-- Step 2 input fields -->
+                                        <div class="mt-3">
+
+                                            <!-- Step 1 input fields -->
+                                            <div class="input-grids">
+                                                <div class="row">
+                                                    <div class="col-sm-6">
+                                                        Insurance is designed to take care of your loved ones for the long term, should something happen to you. Let us help you pick the right cover for your needs at a premium that is unique to your circumstances.
+
+                                                        We’ll give you a comprehensive solution, easily, which can include:
+
+
+                                                        @*@Html.EditorFor(model => model.StudentFirstname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter First Name" } })*@
+
+                                                        @*<input type="text" name="w3lName" id="w3lName" placeholder="Enter First Name"
+                                                            class="contact-input" required="" />*@
+                                                    </div>
+                                                    <div class="col-sm-6">
+                                                        @*@Html.EditorFor(model => model.StudentLastname, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Last Name" } })*@
+
+                                                        Death Cover
+                                                        Disability Cover
+                                                        Critical Illness Cover
+                                                    </div>
+                                                </div>
+
+                                                @*@Html.EditorFor(model => model.StudentIDnumber, new { htmlAttributes = new { @class = "form-control", @placeholder = "Enter Indentity Number" } })*@
+
+                                            </div>
+                                            <div class="form-input">
+
+
+                                            </div>
+                                            @*<div class="text-start">
+                                                    <button class="btn btn-style btn-style-3">Send Message</button>
+                                                </div>*@
+                                            <div class="mt-3">
+                                                <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                                <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button>
+                                            </div>
+
+                                        </div>
+
+                                    </section>
+                                    <!-- Step 3 Content, default hidden on page load. -->
+                                    <section id="step-3" class="form-step d-none">
+                                        <h2 class="font-normal">Upload Supporting Document</h2>
+                                        <!-- Step 3 input fields -->
+                                        <div class="mt-3">
+                                            <div class="input-grids">
+
+                                            </div>
+                                            <tr>
+                                                <th>Beneficiary Indentity Document</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-file-picture-o"></i>
+                                                        </div>
+                                                        <input type="file" name="img_upload" accept=".jpeg,.jpg,.png" onchange="readURL(this);" class="form-control" required="required" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @*<input type="text" name="w3lSubect" id="w3lSubect" placeholder="Guardian Indentity Document"
+        class="contact-input" required="" />*@
+
+                                            @*<input type="text" name="w3lSubect" id="w3lSubect" placeholder="Applicant Indentity Document"
+        class="contact-input" required="" />*@
+                                            <tr>
+                                                <th>Applicant Indentity Document</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-file-picture-o"></i>
+                                                        </div>
+                                                        <input type="file" name="img_upload" accept=".jpeg,.jpg,.png" onchange="readURL(this);" class="form-control" required="required" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Beneficiary Bank Statement</th>
+                                                <td>
+                                                    <div class="input-group">
+                                                        <div class="input-group-addon">
+                                                            <i class="fa fa-file-picture-o"></i>
+                                                        </div>
+                                                        <input type="file" name="img_upload" accept=".jpeg,.jpg,.png" onchange="readURL(this);" class="form-control" required="required" />
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            @*<input type="text" name="w3lSubect" id="w3lSubect" placeholder="Transfer Card"
+        class="contact-input" required="" />*@
+
+                                        </div>
+                                        <div class="form-input">
+
+                                        </div>
+
+                                        <div class="text-start">
+                                            <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                            <button type="submit" value="Save" class="btn btn-style btn-style-3">Submit</button>
+                                        </div>
+                                        @*<div class="text-start">
+                                                <button class="btn btn-style btn-style-3">Send Message</button>
+                                            </div>*@
+                            </div>
+
+    </section>
+    @*<div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Save" class="btn btn-default" />
+        </div>*@
+    </div>
+}
+
+
+
+
+
+
+
+
+
+<button onclick="topFunction()" id="movetop" title="Go to top">
+    <span class="fas fa-level-up-alt" aria-hidden="true"></span>
+</button>
+<script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("movetop").style.display = "block";
+        } else {
+            document.getElementById("movetop").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+<!-- //move top -->
+<!-- common jquery plugin -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+<!-- theme switch js (light and dark)-->
+<script src="assets/js/theme-change.js"></script>
+<!-- //theme switch js (light and dark)-->
+<!-- MENU-JS -->
+<script>
+    $(window).on("scroll", function () {
+        var scroll = $(window).scrollTop();
+
+        if (scroll >= 80) {
+            $("#site-header").addClass("nav-fixed");
+        } else {
+            $("#site-header").removeClass("nav-fixed");
+        }
+    });
+
+    //Main navigation Active Class Add Remove
+    $(".navbar-toggler").on("click", function () {
+        $("header").toggleClass("active");
+    });
+    $(document).on("ready", function () {
+        if ($(window).width() > 991) {
+            $("header").removeClass("active");
+        }
+        $(window).on("resize", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+        });
+    });
+</script>
+<!-- //MENU-JS -->
+<!-- disable body scroll which navbar is in active -->
+<script>
+    $(function () {
+        $('.navbar-toggler').click(function () {
+            $('body').toggleClass('noscroll');
+        })
+    });
+</script>
+<!-- //disable body scroll which navbar is in active -->
+<!-- bootstrap -->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap -->
+<!-- //Js scripts -->
+
+
+
+<script>
+    /**
+ * Define a function to navigate betweens form steps.
+ * It accepts one parameter. That is - step number.
+ */
+    const navigateToFormStep = (stepNumber) => {
+        /**
+         * Hide all form steps.
+         */
+        document.querySelectorAll(".form-step").forEach((formStepElement) => {
+            formStepElement.classList.add("d-none");
+        });
+        /**
+         * Mark all form steps as unfinished.
+         */
+        document.querySelectorAll(".form-stepper-list").forEach((formStepHeader) => {
+            formStepHeader.classList.add("form-stepper-unfinished");
+            formStepHeader.classList.remove("form-stepper-active", "form-stepper-completed");
+        });
+        /**
+         * Show the current form step (as passed to the function).
+         */
+        document.querySelector("#step-" + stepNumber).classList.remove("d-none");
+        /**
+         * Select the form step circle (progress bar).
+         */
+        const formStepCircle = document.querySelector('li[step="' + stepNumber + '"]');
+        /**
+         * Mark the current form step as active.
+         */
+        formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
+        formStepCircle.classList.add("form-stepper-active");
+        /**
+         * Loop through each form step circles.
+         * This loop will continue up to the current step number.
+         * Example: If the current step is 3,
+         * then the loop will perform operations for step 1 and 2.
+         */
+        for (let index = 0; index < stepNumber; index++) {
+            /**
+             * Select the form step circle (progress bar).
+             */
+            const formStepCircle = document.querySelector('li[step="' + index + '"]');
+            /**
+             * Check if the element exist. If yes, then proceed.
+             */
+            if (formStepCircle) {
+                /**
+                 * Mark the form step as completed.
+                 */
+                formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-active");
+                formStepCircle.classList.add("form-stepper-completed");
+            }
+        }
+    };
+    /**
+     * Select all form navigation buttons, and loop through them.
+     */
+    document.querySelectorAll(".btn-navigate-form-step").forEach((formNavigationBtn) => {
+        /**
+         * Add a click event listener to the button.
+         */
+        formNavigationBtn.addEventListener("click", () => {
+            /**
+             * Get the value of the step.
+             */
+            const stepNumber = parseInt(formNavigationBtn.getAttribute("step_number"));
+            /**
+             * Call the function to navigate to the target form step.
+             */
+            navigateToFormStep(stepNumber);
+        });
+    });
+
+</script>
+
+<style>
+
+    <style >
+    h1 {
+        text-align: center;
+    }
+
+    h2 {
+        margin: 0;
+    }
+
+    #multi-step-form-container {
+        margin-top: 5rem;
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .mx-auto {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .pl-0 {
+        padding-left: 0;
+    }
+
+    .button {
+        padding: 0.7rem 1.5rem;
+        border: 1px solid #4361ee;
+        background-color: #4361ee;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .submit-btn {
+        border: 1px solid #0e9594;
+        background-color: #0e9594;
+    }
+
+    .mt-3 {
+        margin-top: 2rem;
+    }
+
+    .d-none {
+        display: none;
+    }
+
+    .form-step {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+        padding: 3rem;
+    }
+
+    .font-normal {
+        font-weight: normal;
+    }
+
+    ul.form-stepper {
+        counter-reset: section;
+        margin-bottom: 3rem;
+    }
+
+        ul.form-stepper .form-stepper-circle {
+            position: relative;
+        }
+
+            ul.form-stepper .form-stepper-circle span {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateY(-50%) translateX(-50%);
+            }
+
+    .form-stepper-horizontal {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+    }
+
+    ul.form-stepper > li:not(:last-of-type) {
+        margin-bottom: 0.625rem;
+        -webkit-transition: margin-bottom 0.4s;
+        -o-transition: margin-bottom 0.4s;
+        transition: margin-bottom 0.4s;
+    }
+
+    .form-stepper-horizontal > li:not(:last-of-type) {
+        margin-bottom: 0 !important;
+    }
+
+    .form-stepper-horizontal li {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: start;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+    }
+
+        .form-stepper-horizontal li:not(:last-child):after {
+            position: relative;
+            -webkit-box-flex: 1;
+            -ms-flex: 1;
+            flex: 1;
+            height: 1px;
+            content: "";
+            top: 32%;
+        }
+
+        .form-stepper-horizontal li:after {
+            background-color: #dee2e6;
+        }
+
+        .form-stepper-horizontal li.form-stepper-completed:after {
+            background-color: #4da3ff;
+        }
+
+        .form-stepper-horizontal li:last-child {
+            flex: unset;
+        }
+
+    ul.form-stepper li a .form-stepper-circle {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin-right: 0;
+        line-height: 1.7rem;
+        text-align: center;
+        background: rgba(0, 0, 0, 0.38);
+        border-radius: 50%;
+    }
+
+    .form-stepper .form-stepper-active .form-stepper-circle {
+        background-color: #4361ee !important;
+        color: #fff;
+    }
+
+    .form-stepper .form-stepper-active .label {
+        color: #4361ee !important;
+    }
+
+    .form-stepper .form-stepper-active .form-stepper-circle:hover {
+        background-color: #4361ee !important;
+        color: #fff !important;
+    }
+
+    .form-stepper .form-stepper-unfinished .form-stepper-circle {
+        background-color: #f8f7ff;
+    }
+
+    .form-stepper .form-stepper-completed .form-stepper-circle {
+        background-color: #0e9594 !important;
+        color: #fff;
+    }
+
+    .form-stepper .form-stepper-completed .label {
+        color: #0e9594 !important;
+    }
+
+    .form-stepper .form-stepper-completed .form-stepper-circle:hover {
+        background-color: #0e9594 !important;
+        color: #fff !important;
+    }
+
+    .form-stepper .form-stepper-active span.text-muted {
+        color: #fff !important;
+    }
+
+    .form-stepper .form-stepper-completed span.text-muted {
+        color: #fff !important;
+    }
+
+    .form-stepper .label {
+        font-size: 1rem;
+        margin-top: 0.5rem;
+    }
+
+    .form-stepper a {
+        cursor: default;
+    }
+</style>
+<link href="~/assets/css/StyleSheet1.css" rel="stylesheet" />
+
+</style>
+

@@ -1,0 +1,74 @@
+﻿@model NextGenLife.Models.PolicyClaim
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PolicyClaim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyMonthlyFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPlanDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPayoutAmount)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PolicyClaimPK }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,159 @@
+#collapsing_header {
+    position: relative;
+    z-index: 10;
+    padding: var(--space-0);
+    padding-bottom: 0;
+    background: #fbb034;
+    border-bottom: 1px solid #FFF;
+    color: #fff;
+}
+
+#collapsing_header>a {
+    float: right;
+}
+
+#collapsing_header>a>button {
+    height: var(--space-5);
+    width: var(--space-5);
+}
+
+header {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-template-rows: 1fr;
+    justify-items: center;
+}
+
+header>button {
+    border-left: 1px solid #dfdddd;
+    border-right: 1px solid #dfdddd;
+    width: 100%;
+    border-bottom: 2px solid #FFF;
+    color: #777;
+    border-radius: 0;
+    background: none;
+    cursor: pointer;
+}
+
+    header > button.open {
+        color: #fff;
+        border-color: #f9f9f9;
+        background: #fbb034;
+    }
+
+header>button:active {
+    color: #555;
+    background-color: #EEE;
+}
+
+#timetable {
+    display: grid;
+    grid-template-columns: var(--space-6) 1fr;
+    grid-template-rows: 1fr;
+    grid-gap: var(--space--1);
+    padding: var(--space--1);
+}
+
+#periods_container>.period {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: var(--space-5);
+    text-align: center;
+    color: #555;
+}
+
+#periods_container>.period>span {
+    display: block;
+    font-size: var(--space--1);
+}
+
+#subjects_container>.subject {
+    height: var(--space-5);
+    line-height: var(--space-5);
+    padding: 0 var(--space-0) 0 var(--space-0);
+    box-sizing: border-box;
+    font-size: var(--space-0);
+    transition: opacity 0.15s, transform 0.15s;
+    border-radius: 5px;
+    background-color: #FFF;
+}
+
+.routine-schedule {
+    transition: opacity 0.15s, transform 0.15s
+}
+
+.routine-schedule.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#subjects_container>*+.subject,
+#periods_container>*+.period {
+    margin-top: var(--space--1);
+}
+
+.subject.empty {
+    visibility: hidden;
+}
+
+.subject.hidden {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+#subjects_container>.subject>span:nth-of-type(2) {
+    float: right;
+    font-size: var(--space--1);
+}
+
+div#timetable-routines {
+    margin: 1em 13em;
+}
+
+.period-element {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 0.5em 1em;
+    background: #080808;
+    color: #fff;
+    border-radius: 15em;
+}
+
+.schedule-content {
+    display: flex;
+    min-height: 2em;
+    background: #fff;
+    margin: 0 2em;
+    margin-bottom: 1.5em;
+    margin-top: -.5em;
+    padding: 2em 0;
+}
+
+.schedule-content>div:nth-child(1) {
+    flex-shrink: 1;
+    flex-grow: 1;
+    padding: 0.5em 1em;
+}
+
+.schedule-content>div:nth-child(1):empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.3em;
+    color: #686868;
+}
+
+.schedule-content>div:nth-child(2):empty {
+    padding: unset;
+}
+
+.schedule-content>div:nth-child(1):empty:after {
+    content: "Vacant";
+}
+
+.schedule-content>div:nth-child(2) {
+    flex-shrink: 1;
+    padding: 0.5em 1em;
+}

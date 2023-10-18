@@ -1,0 +1,80 @@
+﻿@model NextGenLife.Models.PolicyClaim
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>PolicyClaim</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyUserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyUserName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyReason)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyReason)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyStatus)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyStatus)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyMonthlyFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyMonthlyFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPlanDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPlanDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PolicyPayoutAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PolicyPayoutAmount)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

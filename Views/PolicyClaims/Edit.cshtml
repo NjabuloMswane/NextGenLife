@@ -1,0 +1,143 @@
+﻿ [Migration(202305111159)]
+    public class M348_AddPepCellPhone : Migration
+    {
+        public override void Up()
+        {
+            var pepCellphonePlanId = "1f30d57f-46c6-485d-afee-ab5111f5025e";
+            var pepCellphoneProductId = "64393c8f-cb18-4a31-ac7d-e829446f3866";
+
+
+            Delete.FromTable("Product").Row(new { Id = pepCellphoneProductId });
+            Delete.FromTable("PolicyTypeConfig").Row(new { Id = pepCellphonePlanId });
+            Delete.FromTable("PolicyTypeOptionConfig").Row(new { PolicyTypeConfigId = pepCellphonePlanId });
+
+            Insert.IntoTable("Product").Row(new
+            {
+                Id = pepCellphoneProductId,
+                EntityId = 53,
+                CellCaptiveId = 396,
+                Name = "Phone & Gadget",
+                Icon = "phonelink",
+                Enabled = 1
+            });
+
+
+            Insert.IntoTable("PolicyTypeConfig").Row(new
+            {
+                Id = pepCellphonePlanId,
+                RecordOfDisclosureTemplateId = "5ac96a71-1154-41c3-a329-4ce34aef1453",
+                SignedContractTemplateId = "001f002b-9b1b-4fe9-9c66-1f66f43b79c6",
+                ProductId = pepCellphoneProductId,
+                SofariPolicyTypeIds = "8084,8085,8086,8087,8088,8089",
+                Metadata = "{\"hideProRataInQuote\": true,  \"displayAltText\": true,\r\n\"cardConfig\": {\r\n\"hidePaymentQuoteDesc\": true,\r\n\"expandedDescription\": \"expanded desc about the device\",\r\n\"cardInfo\": \"Covers your cellphone against theft, loss or accidental damage. We will repair or replace the insured phone with a handset of similar value.  No waiting periods apply.\",\r\n\"quoteDesc\": \"The Cellphone Insurance Plan covers the insured for theft, loss and accidental damage of a specified device, with various levels of cover available. The following insured events are covered:\",\r\n\"benefit\": \"\",\r\n\"isSelectable\": false\r\n}}",
+                PremiumCalculator = "Cellphone",
+                AddOwnerAsFirstInsured = 1,
+                CardIds = "[\"3fa34ddf-f18f-4f94-a6c6-b096fac81497\",\"3e38f5c8-f6c0-44dc-bbae-ec88f985a778\",\"02366787-2d1e-4032-ac80-5bb04cb75cc9\",\"c162070d-0679-4a0d-9637-ddd22ede3397\",\"2b8bd62b-d90d-4a20-9f8b-3ad02a1fbeee\",\"e8acfc7e-84f9-4bbf-a166-1be455200598\"]",
+                OnScreenOrder = 1,
+                DisplayName = "Phone Plan",
+                DisplayDesc = "For your phone",
+                SignedDebitOrderMandateTemplateId = "39CDC989-7BEE-4943-83DE-68ABDC951EDF",
+                Enabled = 1,
+                TransactionNumberProvider= "TransactionNumberProvider",
+                WebSalesCardIds = "[\"3fa34ddf-f18f-4f94-a6c6-b096fac81497\",\"3e38f5c8-f6c0-44dc-bbae-ec88f985a778\",\"02366787-2d1e-4032-ac80-5bb04cb75cc9\",\"c162070d-0679-4a0d-9637-ddd22ede3397\",\"2b8bd62b-d90d-4a20-9f8b-3ad02a1fbeee\",\"e8acfc7e-84f9-4bbf-a166-1be455200598\"]",
+                PreventUpSell = false
+            });
+
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "9DDBFB79-2D83-4015-BFBE-7E834C0F7341",
+                        ProductOptionName = "Option 1",
+                        ProductOptionCode = "CEL1",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "C944116D-7AE2-4DB1-A2AF-EC6B82AD99C4",
+                        ProductOptionName = "Option 2",
+                        ProductOptionCode = "CEL2",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "B6D635D1-C362-4EA8-8DE5-633DFD8974F3",
+                        ProductOptionName = "Option 3",
+                        ProductOptionCode = "CEL3",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "99983B9A-4D84-4C9D-936F-630A5C86E272",
+                        ProductOptionName = "Option 4",
+                        ProductOptionCode = "CEL4",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "C337B935-2C69-4F95-B696-A5FDD98AE371",
+                        ProductOptionName = "Option 5",
+                        ProductOptionCode = "CEL5",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+            Insert.IntoTable("PolicyTypeOptionConfig")
+                .Row(
+                    new
+                    {
+                        Id = Guid.NewGuid(),
+                        PolicyTypeOptionId = "D2464321-357F-4C8A-AB3F-70F4CED03C15",
+                        ProductOptionName = "Option 6",
+                        ProductOptionCode = "CEL6",
+                        PolicyTypeConfigId = pepCellphonePlanId,
+                        Excess = 0
+                    });
+
+            if (Schema.Table("PolicyTypeConfig").Column("ServiceProvider").Exists())
+            {
+                Delete.Column("ServiceProvider").FromTable("PolicyTypeConfig");
+            }
+
+            Create.Column("ServiceProvider").OnTable("PolicyTypeConfig")
+                .AsString(255)
+                .Nullable();
+
+            Execute.Sql(@"
+            UPDATE PolicyTypeConfig
+            SET ServiceProvider = (
+            SELECT TOP 1 JSON_VALUE(C.MetaData, '$.ServiceProvider') AS ServiceProvider
+            FROM Company as C
+            LEFT JOIN Product as P ON P.CellCaptiveId = C.CellCaptiveId
+            WHERE PolicyTypeConfig.ProductId = P.Id
+            )
+            ");
+
+            Update.Table("PolicyTypeConfig").Set(new
+            {
+            ServiceProvider = "HOLLARD_IN",
+            }).Where(new { Id = pepCellphonePlanId });
+            }
+
+            public override void Down()
+            {
+
+            }
+            }
+            }
